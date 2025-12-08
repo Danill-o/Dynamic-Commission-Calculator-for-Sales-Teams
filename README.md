@@ -2,20 +2,29 @@
 
 
 Project: Dynamic Commission Calculator for Sales Teams
+
 Student: Ishimwe Daniel 
+
 ID: 27296
+
 Course: Database Development with PL/SQL (INSY 8311)
+
 Institution: Adventist University of Central Africa (AUCA)
+
 Lecturer: Eric Maniraguha
+
 Completion Date: December 8, 2025
+
 Project Type: Capstone Project (Final Exam)
 
 ➢ Introduction 
+
 The Dynamic Commission Calculator for Sales Teams is a system designed to automate, streamline, and enhance how sales commissions are calculated within an organisation.  Traditionally, many companies rely on manual spreadsheets and fixed percentage rules,  
 which are time-consuming, error-prone, and difficult to update when sales policies change. This project solves these challenges by building a flexible PL/SQL-based solution that automatically computes commissions based on sales performance, product  categories, sales targets, and personalised business rules. 
 The system ensures accuracy, fairness, and transparency between management and sales teams. It also improves productivity by reducing administrative workload and providing immediate feedback on sales performance. The project is suitable for companies with varying commission structures, including tiered schemes, product-specific percentages, or incentive bonuses. 
 
 🎯 Problem Statement
+
 Sales organizations struggle with manual, error-prone commission calculations that lack real-time processing, dynamic rule application, and comprehensive analytics. This system automates commission calculations with business intelligence capabilities to solve:
 
  	Manual calculation errors and delays
@@ -41,55 +50,89 @@ Sales organizations struggle with manual, error-prone commission calculations th
 Relationship:
 
 •	DEPARTMENT (1)——(∞) SALES_REP
+
 FK:
+
 •	SALES_REP.dept_id → DEPARTMENT.dept_id
 
 Meaning:
+
 Each department has many sales reps; every sales rep belongs to one department.
 
 2. REGION → SALES_REP
+   
 Relationship:
+
 •	REGION (1)——(∞) SALES_REP
+
 FK:
+
 •	SALES_REP.region_id → REGION.region_id
+
 Meaning:
+
 Each region has many sales reps; every rep belongs to one region.
 
-3. REGION → HOLIDAY
+4. REGION → HOLIDAY
+   
 Relationship:
+
 •	REGION (1)——(∞) HOLIDAY
+
 FK:
+
 •	HOLIDAY.region_id → REGION.region_id
+
 Meaning:
+
 Every holiday is defined for one region; each region can have many holidays.
 
-4. PRODUCT → SALE
+6. PRODUCT → SALE
+   
 Relationship:
+
 •	PRODUCT (1)——(∞) SALE
+
 FK:
+
 •	SALE.product_id → PRODUCT.product_id
 
 Meaning:
+
 A sale references one product; each product can be sold many times.
 
 5. SALES_REP → SALE
+   
 Relationship:
+
 •	SALES_REP (1)——(∞) SALE
+
 FK:
+
 •	SALE.rep_id → SALES_REP.rep_id
+
 Meaning:
+
 Each sale is performed by one sales rep; a rep can have many sales.
 
-6. COMMISSION_RULE → COMMISSION_CALCULATION
+7. COMMISSION_RULE → COMMISSION_CALCULATION
+   
 Relationship:
+
 •	COMMISSION_RULE (1)——(∞) COMMISSION_CALCULATION
+
 FK:
+
 •	COMMISSION_CALCULATION.rule_id → COMMISSION_RULE.rule_id
+
 Meaning:
+
 A commission rule is applied many times in commission calculations.
 
-7. SALE → COMMISSION_CALCULATION
+9. SALE → COMMISSION_CALCULATION
+    
 Relationship:
+
 •	SALE (1)——(1) COMMISSION_CALCULATION
 FK:
 •	COMMISSION_CALCULATION.sale_id → SALE.sale_id
