@@ -1,6 +1,6 @@
 -- ============================================
 -- Dynamic Commission Calculator - Data Insertion
--- Created by: Daniel (ID: 2796)
+-- Created by: Daniel (ID: 27296)
 -- Date: November 2025
 -- ============================================
 
@@ -210,4 +210,3 @@ WHERE status = 'APPROVED';
 
 COMMIT;
 
-PROMPT Data insertion completed successfully! 500+ records inserted.
