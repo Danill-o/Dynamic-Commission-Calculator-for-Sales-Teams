@@ -381,6 +381,23 @@ o	Business rule triggers for salary/commission validation
 ✅ User info properly recorded
 
 
+BUSINESS  INTELLIGENCE
+
+<img width="855" height="422" alt="image" src="https://github.com/user-attachments/assets/43f36f55-237d-474b-9d9e-e58bee7ad140" />
+
+<img width="850" height="539" alt="image" src="https://github.com/user-attachments/assets/31029c79-9be2-42e7-98e5-d2bcd76dd669" />
+
+<img width="861" height="415" alt="image" src="https://github.com/user-attachments/assets/144f2f76-7aaa-4b0e-bd65-66b3b9eb8860" />
+
+<img width="825" height="355" alt="image" src="https://github.com/user-attachments/assets/8375e6cb-7fd2-44db-84d6-a92361394f94" />
+
+<img width="866" height="587" alt="image" src="https://github.com/user-attachments/assets/388ffde8-96be-4bdb-b932-36e9dfae6cc1" />
+
+
+
+
+
+
 ➢ Conclusion 
 
 The Dynamic Commission Calculator is a robust, flexible, and innovative solution that significantly improves how sales commissions are determined and managed. By automating calculations, supporting multiple commission schemes, and providing clear analytical feedback, the system enhances fairness, transparency, and operational efficiency. It is designed with scalability in mind, allowing organisations to adapt the calculator as business needs evolve.
