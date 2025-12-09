@@ -11,6 +11,8 @@
 --   p_error_message - Error message if failed
 -- Returns: Audit log ID
 -- ============================================
+
+
 CREATE OR REPLACE FUNCTION log_audit_event(
     p_table_name IN VARCHAR2,
     p_operation_type IN VARCHAR2,
