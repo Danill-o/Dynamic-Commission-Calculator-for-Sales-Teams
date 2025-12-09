@@ -295,17 +295,14 @@ Objective: Develop procedures, functions, packages, and cursors
 Deliverable: PL/SQL scripts + test results
 
 5 Core Procedures:
-
+--
 1.	calculate_sale_commission() - Calculate commission for individual sales
-   
-   link:https://github.com/Danill-o/Dynamic-Commission-Calculator-for-Sales-
-
 2.	process_monthly_payout() - Process bulk commission payments
 3.	generate_sales_report() - Generate detailed sales reports
 4.	bulk_update_product_prices() - Update prices with business rules
 5.	update_rep_commission_rate() - Update commission rates with validation
 
-   
+ --  
 5 Key Functions:
 
 
