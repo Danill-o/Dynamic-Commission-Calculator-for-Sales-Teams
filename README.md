@@ -73,7 +73,7 @@ Meaning:
 
 Each region has many sales reps; every rep belongs to one region.
 
-4. REGION → HOLIDAY
+3. REGION → HOLIDAY
    
 Relationship:
 
@@ -87,7 +87,7 @@ Meaning:
 
 Every holiday is defined for one region; each region can have many holidays.
 
-6. PRODUCT → SALE
+4. PRODUCT → SALE
    
 Relationship:
 
@@ -115,7 +115,7 @@ Meaning:
 
 Each sale is performed by one sales rep; a rep can have many sales.
 
-7. COMMISSION_RULE → COMMISSION_CALCULATION
+6. COMMISSION_RULE → COMMISSION_CALCULATION
    
 Relationship:
 
@@ -129,7 +129,7 @@ Meaning:
 
 A commission rule is applied many times in commission calculations.
 
-9. SALE → COMMISSION_CALCULATION
+7. SALE → COMMISSION_CALCULATION
     
 Relationship:
 
@@ -141,20 +141,31 @@ Meaning:
 Each sale generates one commission calculation.
 
 8. COMMISSION_CALCULATION → PAYOUT
+   
 Relationship:
+
 •	COMMISSION_CALCULATION (1)——(∞) PAYOUT
+
 FK:
+
 •	PAYOUT.calc_id → COMMISSION_CALCULATION.calc_id
+
 Meaning:
 
 A commission calculation can result in multiple payouts (e.g., split payments).
 
 9. SALE → AUDIT_LOG
+    
 Relationship:
+
 •	SALE (1)——(∞) AUDIT_LOG
+
 FK:
+
 •	AUDIT_LOG.sale_id → SALE.sale_id
+
 Meaning:
+
 A sale may appear in audit logs multiple times (eg. updates, corrections).
 
 
@@ -188,6 +199,7 @@ The Dynamic Commission Calculator automates the end-to-end workflow of sales com
 	Actors: Finance Department, System
 
 	Flow: Approved commissions are batched by pay period (weekly/biweekly/monthly). Finance validates total amounts against budgets, processes batch payments through the payroll system, updates payment status, and generates financial reports for accounting reconciliation.
+
 5. Dispute Resolution
 
 	Actors: Sales Representatives, Sales Managers, Finance
@@ -269,9 +281,13 @@ Key Components:
 <img width="416" height="242" alt="image" src="https://github.com/user-attachments/assets/85f1a53b-ad49-4485-a979-f8b9733d173c" />
 
 •	500+ realistic records across all tables
+
 •	Constraints: PK, FK, CHECK, NOT NULL, UNIQUE, DEFAULT
+
 •	Indexes for performance optimization
+
 •	Sequences for ID generation
+
 Phase VI: PL/SQL Development
 
 Objective: Develop procedures, functions, packages, and cursors
@@ -311,42 +327,56 @@ Phase VII: Advanced Programming & Auditing
 Objective: Implement triggers, business rules, and comprehensive auditing
 
 CRITICAL BUSINESS RULE:
+
 Employee CANNOT INSERT/UPDATE/DELETE on:
 
 1. WEEKDAYS (Monday-Friday)
+
 2. PUBLIC HOLIDAYS (upcoming month only)
    
 Implementation Components:
 
 1.	Holiday Management System:
+   
 o	HOLIDAY table with recurring holidays
+
 o	Sample holidays for upcoming month
 
-3.	Enhanced Audit System:
+2.	Enhanced Audit System:
    
 o	Comprehensive AUDIT_LOG table with session/client info
+
 o	Autonomous transaction logging function
 
-5.	Restriction Functions:
+3.	Restriction Functions:
    
 o	is_weekday() - Check if date is Monday-Friday
+
 o	is_holiday() - Check if date is public holiday
+
 o	can_employee_perform_dml() - Enforce business rule
 
-7.	Triggers:
+4.	Triggers:
 
 o	4 Simple triggers for basic DML restriction
+
 o	1 Compound trigger with comprehensive auditing
+
 o	Business rule triggers for salary/commission validation
 
-8.	Testing Requirements Met:
+5.	Testing Requirements Met:
 
    
 ✅ Trigger blocks INSERT on weekday (DENIED)
+
 ✅ Trigger allows INSERT on weekend (ALLOWED)
+
 ✅ Trigger blocks INSERT on holiday (DENIED)
+
 ✅ Audit log captures all attempts
+
 ✅ Error messages are clear
+
 ✅ User info properly recorded
 
 
