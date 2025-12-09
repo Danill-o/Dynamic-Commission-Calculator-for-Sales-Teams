@@ -383,6 +383,15 @@ o	Business rule triggers for salary/commission validation
 
 BUSINESS  INTELLIGENCE
 
+ Performance Dashboard:
+System resource utilization
+
+Query performance metrics
+
+Trigger execution times
+
+Table statistics and growth
+
 <img width="855" height="422" alt="image" src="https://github.com/user-attachments/assets/43f36f55-237d-474b-9d9e-e58bee7ad140" />
 
 <img width="850" height="539" alt="image" src="https://github.com/user-attachments/assets/31029c79-9be2-42e7-98e5-d2bcd76dd669" />
